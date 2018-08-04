@@ -45,20 +45,30 @@ $(
         it("name is defined", function() {
             for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
-                expect(feed.name.length).not.toBe(0);
+                expect(feed.url.length).not.toBe(0);
             }
           });
     });
-
-    /* TODO: Write a new test suite named "The menu" */
     describe("The menu", function() {});
+    const menu = document.querySelector('body');
+    const menuLink = document.querySelector('.menu-icon-link');
+    /* TODO: Write a new test suite named "The menu" */
 
+    it('element is hidden',function() {
+        expect(menu.classList.contains('menu-hidden')).toBe(true);
+    });
     /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-
+    it('changes when clicked',function(done){
+        menuLink.click();
+        expect(menuLink.classList.contains('menu-hidden')).toBe(false);
+        done();
+        menuLink.click();
+        expect(menuLink.classList.contains('menu-hidden')).toBe(true);
+    });
     /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when

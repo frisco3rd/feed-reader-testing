@@ -1,3 +1,5 @@
-# How to run
+# Feed Reader Testing in Jasmine.js
+A project to test a feedReader code with Jasmine.js 
 
->Open index.html to view Jasmine test.
+# How to run
+Open index.html in the browser of your choice. 
